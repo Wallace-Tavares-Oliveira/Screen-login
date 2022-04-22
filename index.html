@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login-Helper</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="../js/index.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f07c1c1303.js" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Login-Helper</h1>
+  </header>
+
+  <main>
+    <form>
+
+      <section class="inputs-container">
+        <input type="email" placeholder="example@gmail.com">
+
+        <div class="password-container">
+          <input type="password" id="field-password" class="field-password" placeholder="********">
+          <i class="fa-solid fa-eye" id="eye" onclick="showPassword()"></i>
+          <i class="fa-solid fa-eye-slash" id="eye-slash" onclick="showPassword()"></i>
+        </div>
+      </section>
+
+      <section class="passaword-infos">
+        <div>
+          <input type="checkbox">
+          <span>Remember password?</span>
+        </div>
+        <a href="#">Forgot password?</a>
+      </section>
+
+      <button id="btn-login">Login</button>
+
+      <section class="links-container">
+        <span>Enter with:</span>
+        <aside>
+          <a href="https://www.google.com/"><i class="fa-brands fa-google-plus-square google"></i></i> </a>
+          <a href="https://www.linkedin.com/in/wallace-oliveira/"><i class="fa-brands fa-linkedin linkedin"></i></a>
+          <a href="https://www.instagram.com/wallace_toliveira/"><i class="fa-brands fa-instagram-square instagram"></i></i> </a>
+        </aside>
+      </section>
+
+      <footer>
+        <hr>
+
+        <span>Don't have an account yet? <a href="#" /a>Log-up</span>
+
+      </footer>
+
+    </form>
+  </main>
+  <script>
+    function showPassword() {
+    const eye = document.getElementById('eye');
+    const eyeSlash = document.getElementById('eye-slash');
+    const fieldPassword = document.getElementById('field-password');
+
+    if(eye.style.display === 'none') {
+        eye.style.display = 'block';
+        eyeSlash.style.display = 'none';
+        fieldPassword.type = 'text';
+    } else {
+        eye.style.display = 'none';
+        eyeSlash.style.display = 'block';
+        fieldPassword.type = 'password';
+    }
+};
+
+document.getElementById('btn-login').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Logged')
+});
+  </script>
+</body>
+
+</html>
